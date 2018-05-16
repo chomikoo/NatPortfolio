@@ -3,22 +3,32 @@
 (function($) {
  	"use strict";
 
- 	// Header slider init
+ 	if( $('body').is('.home') ) {
 
- 	$('.hero__carousel').slick({
- 		lazyLoad: 'ondemand',
- 		autoplay: true,
- 		arrows: false,
- 		centerMode: true,
- 		centerPadding: 0,
- 		mobileFirst: true,
- 		slidesToShow: 1,
- 		slidesToScroll: 1,
- 		infinite: true,
- 		fade: true,
- 		speed: 700,
+	 	// Header slider init
+	 	$('.hero__carousel').slick({
+	 		lazyLoad: 'ondemand',
+	 		autoplay: true,
+	 		arrows: false,
+	 		centerMode: true,
+	 		centerPadding: 0,
+	 		mobileFirst: true,
+	 		slidesToShow: 1,
+	 		slidesToScroll: 1,
+	 		infinite: true,
+	 		fade: true,
+	 		speed: 700,
+	 	});
 
- 	});
+ 		// Scrolling header
+	 	var hero = document.getElementById('hero'),
+	 		main = document.querySelector('#main');
+
+	 	hero.addEventListener('click', function(){
+	 		scrollToItem(main);
+	 	});
+	 	
+ 	}
 
 
 
@@ -106,13 +116,7 @@
 	    }
 	    // return false;
 	}
- 	// Scrolling header
- 	var hero = document.getElementById('hero'),
- 		main = document.querySelector('#main');
 
- 	hero.addEventListener('click', function(){
- 		scrollToItem(main);
- 	})
 
 
  	// AJAX Post Loading 

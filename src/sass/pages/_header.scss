@@ -30,7 +30,7 @@ header {
     text-transform: uppercase;
     font-size: 70px;
     line-height: 75%;
-    animation: showHeader 1s ease-in both;
+    // animation: showHeader 1s ease-in both;
     &.onScroll {
       font-size: 30px;
       color: $grey;
