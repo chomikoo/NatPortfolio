@@ -1,0 +1,128 @@
+//////////////////
+// HEADER
+//////////////////
+header {
+  position: relative;
+}
+
+.hero {
+  height: 100vh;
+  transition: all 0.5s ease-in-out;
+  div {
+    height: 100%;
+  }
+  &__carousel {
+    // height: 100%;
+  }
+  &__slide {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+  }
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: $Raleway;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 70px;
+    line-height: 75%;
+    animation: showHeader 1s ease-in both;
+    &.onScroll {
+      font-size: 30px;
+      color: $grey;
+      opacity: 0;
+    }
+  }
+
+  &.hidden {
+    height: 0;
+  }
+}
+
+.navbar {
+  width: 100%;
+  background-color: $white;
+  font-family: $Raleway;
+  &__container {  
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+  }
+  &__nav {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    background: $white-menu;
+    &.open {
+      display: block;
+    }
+
+  }
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .menu-item {
+    padding: 10px 0;
+    font-size: 20px;
+    cursor: pointer;
+    transition: text-shadow 0.5s ease-in-out;
+
+    &:hover {
+      text-shadow:  0 0 .65px #333, 0 0 .65px #333;
+    }
+  }
+  .current-menu-item {
+    font-weight: 700;
+  }
+  // STICKY NAVBAR
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+@include breakpoint(md) {
+  .navbar {
+    &__nav {
+      position: static;
+      display: block;
+      width: 35%;
+    }
+    &__list {
+      position: static;
+
+      display: flex;
+      justify-content: space-between;
+      transform: none;
+
+      width: 100%;
+    }
+    .menu-item {
+      font-size: 16px;
+      padding: 0;
+    }
+
+  }
+}
+
+@include breakpoint(xl) {
+  .navbar *{
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,26 @@
+.contact {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	font-family: $Raleway;
+	animation: fadein 2s;
+	&__element {
+		display: inline-block;
+		padding: 20px 0;
+
+		transition: text-shadow 0.5s ease-in-out;
+		&:hover {
+			text-shadow:  0 0 .65px #333, 0 0 .65px #333;
+		}
+	}
+}
+
+@include breakpoint(md) {
+	.contact {
+		font-size: 24px;
+	}
+}

@@ -1,0 +1,66 @@
+/*!
+Theme Name: NatTheme
+Theme URI: github
+Author: Chomikoo
+
+Version:  1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE     
+Text Domain: 
+Tags: Photography, portfolio, trening
+*/
+ 
+
+/* --------------------------------------------------------------*/
+// # CSS VENDORS       
+@import "vendor/slick";
+
+
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "helpers/normalize";
+ 
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "helpers/variables";
+
+/*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+// @import "helpers/mixins";    
+@import "layout/breakpoints"; 
+@import "layout/grid";
+
+/*--------------------------------------------------------------
+# Fonts 
+--------------------------------------------------------------*/
+@import "helpers/fonts";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import 'layout/general';  
+@import 'layout/wordpress';  
+
+@import 'layout/buttons';  
+
+@import 'pages/header';  
+@import 'pages/index';  
+@import 'pages/footer';  
+@import 'pages/single';  
+@import 'pages/about';  
+@import 'pages/contact';  
+
+
+
+/*--------------------------------------------------------------
+# Animations
+--------------------------------------------------------------*/
+
+@import 'layout/animations';  
+    
+
+                

@@ -1,0 +1,117 @@
+//////////////////
+// INDEX
+//////////////////
+
+#main {
+	padding-top: 0;
+}
+.gallery {
+	&__single {
+		position: relative;
+		margin-bottom: $spacer;
+		overflow: hidden;
+	}
+	&__link {
+		display: block;
+		// font-size: 0;
+		img {
+			display: block;
+			// vertical-align: bottom;
+		}
+	}
+	// OVERLAY
+	&__overlay {	
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: $spacer-sm;
+		background:  linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.77) 49%, rgba(0,0,0,0.64) 78%, rgba(0,0,0,0.62) 83%, rgba(0,0,0,0.54) 100%);
+		opacity: 0;
+		transition: all 0.4s ease-in-out;
+		color: $white;
+	}
+	&__single {
+		&:hover .gallery__overlay {
+			// transform: translate3d(0, 0, 0);
+			opacity: 1;	
+		}
+	} 
+}
+
+
+
+@include breakpoint(sm) {
+	.gallery {
+		&__single {
+			// margin: $spacer-sm 0;
+			margin-bottom: $spacer-sm;
+		}
+		&__link {
+			display: block;
+			// font-size: 0;
+			img {
+				display: block;
+				// vertical-align: bottom;
+			}
+		}
+	}
+}
+
+
+
+@include breakpoint(md) {
+	.gallery {
+		&__single {
+			// margin: $spacer-md 0;
+			margin-bottom: $spacer-md;
+
+		}
+		&__link {
+			display: block;
+			// font-size: 0;
+			img {
+				display: block;
+				// vertical-align: bottom;
+			}
+		}
+	}
+}
+
+@include breakpoint(lg) {
+	.gallery {
+		column-count: 2;
+		column-gap: $spacer-md;
+
+		&__single {
+			margin-bottom: $spacer-md;
+		}
+		&__link {
+			display: block;
+			// font-size: 0;
+			img {
+				display: block;
+				// vertical-align: bottom;
+			}
+		}
+	}
+}
+
+
+
+@include breakpoint(xl) {
+	.gallery {
+		&__single {
+			margin-bottom: $spacer-xl;
+		}
+		&__link {
+			display: block;
+			// font-size: 0;
+			img {
+				display: block;
+				// vertical-align: bottom;
+			}
+		}
+	}
+}

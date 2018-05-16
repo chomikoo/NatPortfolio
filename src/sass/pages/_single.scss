@@ -1,0 +1,66 @@
+
+.single-galeria {
+	padding: $spacer-sm + 10;
+	// width: 100vw;
+	height: 100vh;
+	// overflow: hidden;
+}
+
+.photo-box {
+	height: calc( 100vh - #{2 * $spacer-sm});
+	// max-height: 75vh;
+	overflow: hidden;
+
+	.slick-slider {
+		height: 100%;
+	}
+
+	.slick-track {
+		display: flex;
+		.slick-slide {
+			img {
+				margin: 0 auto;
+				max-height: 75vh;
+			}
+		}
+	}
+
+	
+	.custom_paging {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: $grey;
+		li {
+			display: none;
+		}
+		.slick-active {
+			display: inline-block;
+		}
+	}
+
+	.slick-arrow {
+		position: absolute;
+		bottom: 70px;
+
+		color: $grey;
+		border: none;
+		background-color: transparent;
+
+		font-size: 100px;
+
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			color: $black;
+		}
+	}
+	.slick-prev {
+		left: 0;
+	}
+	.slick-next {
+		right: 0;
+	}
+
+}
+

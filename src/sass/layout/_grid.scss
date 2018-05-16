@@ -1,0 +1,97 @@
+////////
+// GRID
+////////
+*, 
+*:before, 
+*:after { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.container {
+  padding: $spacer;
+  margin-left: auto;
+  margin-right: auto;
+
+} 
+
+
+.container-fluid {
+  padding: 0 15px;
+
+  max-width: 100%;
+  width: 100%;
+}
+
+[class*="col-"] { 
+  width: 100%;  
+  padding: 15px; 
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100% / 12 * $i }
+}
+
+@for $i from 1 through 12 {
+  .col-offset-#{$i} { width: 100% / 12 * $i }
+}
+
+@include breakpoint(sm) {
+  .container {
+    padding: $spacer-sm;
+  }
+
+
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} { width: 100% / 12 * $i }
+  }
+
+  @for $i from 1 through 12 {
+    .col-sm-offset-#{$i} { margin-left: 100% / 12 * $i }
+  }
+}
+
+//================//
+// MD BREAKPOINT //
+//================//
+
+@include breakpoint(md) {
+  .container {
+    padding: $spacer-md;
+  }
+  @for $i from 1 through 12 {
+    .col-md-#{$i} { width: 100% / 12 * $i }
+  }
+
+  @for $i from 1 through 12 {
+    .col-md-offset-#{$i} { margin-left: 100% / 12 * $i }
+  }
+
+}
+
+//================//
+// XL BREAKPOINT //
+//================//
+
+@include breakpoint(xl) {
+  .container {
+    padding: $spacer-xl;
+    max-width: 1200px;
+  }
+
+  @for $i from 1 through 12 {
+    .col-xl-#{$i} { width: 100% / 12 * $i }
+  }
+
+  @for $i from 1 through 12 {
+    .col-xl-offset-#{$i} { margin-left: 100% / 12 * $i }
+  }
+
+}
