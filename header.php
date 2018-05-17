@@ -18,8 +18,7 @@
 
 
 	<link rel="shortcut icon" href="<?php echo theme_URL; ?>img/favicon.ico" type="image/x-icon">
-
-	<style type="style" src="<?php echo theme_URL; ?>/style.css"></style>
+	<link rel="stylesheet" href="main.min.css">
 
 </head>
 

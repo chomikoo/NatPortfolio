@@ -20,12 +20,15 @@ const insert 		= require("gulp-insert");
 const gutil 		= require('gulp-util');
 const concat 		= require('gulp-concat');
 const uglify 		= require('gulp-uglify');
+const gulpIf    = require('gulp-if');
+const cssnano = require('gulp-cssnano');
 const babili 		= require('gulp-babel-minify');
 const clean 		= require('gulp-clean');
 const notify 		= require('gulp-notify');
 
 const strip 		= require('gulp-strip-comments');
 const htmlreplace 	= require('gulp-html-replace');
+const imagemin = require('gulp-imagemin');
 
 // SETTING // PATHS
 
@@ -95,7 +98,8 @@ gulp.task('sass', () => {
 
 gulp.task('scripts', () => {
   return gulp.src([
-      // 'src/js/script2.js',
+      'src/js/vendors/lazysizes.js',
+      'src/js/vendors/slick.js',
       'src/js/script.js'
     ])
     .pipe(concat('main.min.js'))
@@ -152,16 +156,15 @@ gulp.task('fonts', () => {
 // CHANGE FILES SRC + Min
 /////////////////////
 
-// gulp.task('useref', () => {
-//   return gulp.src('src/*.php')
-//     .pipe(htmlreplace({
-//       'css': 'main.min.css',
-//       'js': 'js/main.min.js'
-//     }))
-//     .pipe(useref())
-//     .pipe(gulpIf('*.css', cssnano()))
-//     .pipe(gulp.dest('dist'))
-// });
+gulp.task('useref', () => {
+  return gulp.src('**/*.php')
+    .pipe(htmlreplace({
+      'css': 'main.min.css',
+      'js': '<?php echo theme_URL; ?>/scripts/main.min.js'
+    }))
+    .pipe(gulpIf('*.css', cssnano()))
+    .pipe(gulp.dest('./'))
+});
 
 // gulp.task('clean', function() {
 // 	return gulp.src('.dist', {force: true})
@@ -183,6 +186,6 @@ gulp.task('default', function (callback) {
 });
 
 gulp.task('build', function (callback) {
-  runSequence('clean:dist', ['default', 'images', 'fonts'], 'useref', 'scripts',
+  runSequence( ['default', 'images', 'fonts'], 'useref', 'scripts',
     callback)
 });

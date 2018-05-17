@@ -14,13 +14,8 @@
 		</footer>
 		<?php wp_footer(); ?>
 
-	
-		<script type="text/javascript" src="<?php echo theme_URL; ?>/src/js/vendors/lazysizes.js"></script>
-
-		<script type="text/javascript" src="<?php echo theme_URL; ?>/src/js/vendors/slick.js"></script>
-
-		<script type="text/javascript" src="<?php echo theme_URL; ?>/src/js/script.js"></script>
-
+		<!-- <script src="scripts/main.min.js"></script> -->
+		
         <script>
         (function() {
         var link = document.createElement('link');
